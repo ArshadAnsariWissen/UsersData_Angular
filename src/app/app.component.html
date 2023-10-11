@@ -1,0 +1,24 @@
+
+<div class="container">
+
+<form style="margin: 60px 0px;" >
+  <div class="form-group">
+    <label for="name">Enter Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Name" #name>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input #email type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Enter Mobile Number</label>
+    <input #mobile type="number" class="form-control" id="exampleInputPassword1" placeholder="Mobile Number">
+  </div>
+  <button (click)="enterNewUser(name, email, mobile); $event.preventDefault()" style="margin-top: 20px;" type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<app-display-item
+  *ngFor="let serverElement of serverElements"
+  [element] = "serverElement"
+></app-display-item>
+</div>
